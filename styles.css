@@ -1,0 +1,178 @@
+CSS
+
+/* --- Base Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Deep dark dungeon/stone gradient background */
+    background: radial-gradient(circle at top, #2a2c33 0%, #0d0d12 100%);
+    background-color: #0d0d12;
+    background-attachment: fixed;
+    
+    /* Parchment/Bone text color */
+    color: #e3d2aa; 
+    
+    /* Serif font to mimic fantasy/runic texts */
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    line-height: 1.6;
+}
+
+/* Headings: Gold/Bronze with heavy drop shadows */
+h1, h2, h3 {
+    color: #f8b700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(248, 183, 0, 0.3);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* --- Header & Navigation --- */
+header {
+    /* Dark wood/iron texture base */
+    background: linear-gradient(to bottom, #3e2815 0%, #1a1006 100%);
+    border-bottom: 4px solid #b78a3c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 2px 2px 0px #000, 0 0 10px #f8b700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #f8b700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Magical "Fel Green" hover effect */
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #41ff00, 0 0 20px #41ff00;
+}
+
+/* --- Main Layout --- */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3 parts main content, 1 part sidebar */
+    gap: 30px;
+}
+
+/* --- Sections & Articles (UI Panels) --- */
+section, aside {
+    /* UI Window styling: semi-transparent black with thick border */
+    background: rgba(15, 15, 15, 0.85);
+    border: 2px solid #544026;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+#home {
+    grid-column: 1 / -1; /* Hero section spans full width */
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(30, 20, 10, 0.9), rgba(10, 10, 10, 0.9));
+    border-color: #8c6a28;
+}
+
+article {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #544026;
+}
+
+article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* --- Buttons (The "Quest Accept" look) --- */
+button {
+    background: linear-gradient(to bottom, #8a0000 0%, #4d0000 100%);
+    border: 2px solid #f8b700;
+    border-radius: 3px;
+    color: #f8b700;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), inset 0 0 5px rgba(255, 255, 255, 0.2);
+    text-shadow: 1px 1px 2px #000;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #a30000 0%, #660000 100%);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(248, 183, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.3);
+    border-color: #ffda66;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Aside / Sidebar --- */
+aside {
+    background: rgba(25, 20, 15, 0.9);
+    border-color: #4a3620;
+}
+
+aside h3 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #544026;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* --- Footer --- */
+footer {
+    background: #0d0905;
+    border-top: 3px solid #544026;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #8c7a5a;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr; /* Stack sidebar under main content on small screens */
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
